@@ -1,0 +1,871 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,300;1,400;1,500&display=swap');
+:root
+{
+      --green: green;
+      --black: #130f40;
+      --light-color: #666;
+      --box-shadow: 0 .1rem 1rem rgba(0,0,0.1);
+      --border :2rem solid rgba(0,0,0.1);
+      --outline: .1rem solid rgba(0,0,0.1);
+}
+*
+{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-y: auto; /* Enables vertical scrolling if content is taller than viewport */
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    background: #eee;
+    overflow-x: hidden; /* Optional: prevents horizontal scrolling if not needed */
+}
+
+
+.header
+{
+    border: 2px solid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem  9%;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    display: flex;
+
+}
+
+.header .logo
+{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--green);
+}
+
+.header .navbar a
+{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--black);
+    margin: 1.5rem;
+    
+}
+
+.header .navbar:hover
+{
+    color: var(--green);
+}
+
+.header .icons div
+{
+    border: 0px solid;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--black);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.header .icons div:hover
+{
+    background: var(--green);
+    color: white;
+    cursor: pointer;
+}
+
+#menu-btn
+{
+    display: none;
+}
+
+.header .search-form
+{
+    border: 0px solid;
+    position: absolute;
+    top: 110%;
+    right: 110%;
+    width: 50rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form-active
+{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .search-form input
+{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+
+.header .search-form label
+{
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .search-form label:hover
+{
+    color: var(--green);
+}
+
+/* Cart Dropdown Styles */
+.cart-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    width: 30rem;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    display: none;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.cart-dropdown h2 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.checkout-btn {
+    background: var(--green);
+    color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.checkout-btn:hover {
+    background: darkgreen;
+}
+
+/* Login Form Styles */
+.login-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    display: none;
+    padding: 2rem;
+    z-index: 1000;
+}
+
+.login-form h2 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: var(--outline);
+    border-radius: .5rem;
+}
+
+.login-btn {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: darkgreen;
+}
+.btn {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 1rem;
+    border: 2px solid;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-style: bold;
+}
+
+.btn:hover {
+    background: darkgreen;
+}
+section{
+    padding: 2rem 9%; 
+}
+
+.home{
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    background: url(./assets/home2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+}
+
+.home.content{
+    border: 1px solid;
+    text-align: center;
+    width: 60rem;
+}
+
+.home .content h2{
+    color: var(--black);
+    font-size: 4rem;
+}
+
+.home .content h2 span{
+    color: var(--green);
+}
+
+.home .content p{
+    color: black;
+    font-size: 2rem;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.heading
+{
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
+    background: var(--green);
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+
+    clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+ 
+.features{
+    padding: 2rem 0;
+    padding-top: 60px;
+}
+
+.features .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.features .box-container .box {
+    border: 1px solid #ddd;
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    max-width: 300px;
+}
+
+.features .box-container .box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 5px; /* Optional for rounded corners */
+}
+.features .box-container .box h2 {
+    font-size: 2rem;
+    color: var(--black);
+    margin: 1rem 0;
+}
+
+.features .box-container .box p {
+    font-size: 1.4rem;
+    color: var(--light-color);
+    margin: 1rem 0;
+    flex-grow: 1; /* Allows the text to take up available space */
+    padding-bottom: 3rem;
+}
+
+.features  .box:hover {
+    transform: translateY(-10px);
+}
+
+
+/* Align the products section in a grid layout with 4 items per view */
+.product-slider {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Smooth snapping for slider */
+    padding: 1rem 0;
+    gap: 2rem; /* Space between product groups */
+    padding-top: 20px;
+}
+
+/* Arrange products in groups of 4 */
+.product-slider .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns in each group */
+    gap: 1rem;
+    scroll-snap-align: start; /* Snap each group to start */
+    min-width: 100%; /* Each group takes full width of the container */
+}
+
+
+/* Styling for individual product boxes */
+.product-slider .box {
+    display: flex;
+    flex: 0 0 80%;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    scroll-snap-align: center;
+}
+
+.product-slider .box img {
+    width: 100%; /* Full width of the box */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crops the image to fit without distortion */
+    border-radius: 5px; /* Rounded corners for consistency */
+    margin-bottom: 15px;
+}
+
+.product-slider .box h1 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin: 0.5rem 0;
+}
+
+.product-slider .box .price {
+    font-size: 1.6rem;
+    color: var(--green);
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.product-slider .box .stars {
+    color: gold;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+.product-slider  .box:hover {
+    transform: translateY(-10px);
+}
+
+
+/* Hide scrollbar for a cleaner look */
+.product-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Categories Section Styles */
+.categories {
+    padding: 50px 20px;
+    padding-bottom: 20px;
+   
+}
+
+
+/* Box Container Styles */
+.categories .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center boxes horizontally */
+    gap: 20px; /* Space between boxes */
+    padding-top: 20px;
+}
+
+/* Individual Box Styles */
+.categories .box {
+    flex: 0 0 80%;
+    background-color: white; /* White background for each box */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align all text */
+    flex: 1 1 250px; /* Responsive box sizing */
+    max-width: 300px; /* Limit max width */
+    box-shadow: var(--box-shadow);
+}
+
+/* Image Styling */
+.categories .box img {
+    width: 100%; /* Full width of the box */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crops the image to fit without distortion */
+    border-radius: 5px; /* Rounded corners for consistency */
+    margin-bottom: 15px;
+}
+
+/* Heading Styling within the Box */
+.categories .box h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Paragraph Styling within the Box */
+.categories .box p {
+    font-size: 1em;
+    color: #555; /* Dark gray color for readability */
+    margin: 10px 0;
+    padding-bottom: 10px;
+}
+.categories .box:hover {
+    transform: translateY(-10px);
+}
+
+
+.review .review-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+.categories .box-container::-webkit-scrollbar {
+    display: none;
+}
+
+.review .review-slider .wrapper {
+    display: flex;
+    gap: 2rem;
+    scroll-snap-align: start;
+}
+
+.review .review-slider .box {
+    flex: 0 0 80%;
+    border: 1px solid #ddd;
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    max-width: 300px;
+}
+
+.review .review-slider .box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.review-slider .box p {
+    font-size: 1em;
+    color: #555; /* Dark gray color for readability */
+    margin: 10px 0;
+    padding-bottom: 10px;
+}
+
+.review .box h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.review-slider .box .stars {
+    color: gold;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+.review  .box:hover {
+    transform: translateY(-10px);
+}
+
+
+/* Hide the scrollbar for a cleaner look */
+.review .review-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Blog Section Styles */
+.blog {
+    padding: 2rem 9%;
+}
+
+.blog .heading {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #fff;
+    background: var(--green);
+    padding: .5rem 3rem;
+    display: inline-block;
+    clip-path: polygon(100% 0%, 93% 50%, 100% 100%, 0% 100%, 7% 50%, 0% 0%);
+    margin-bottom: 2rem;
+}
+
+.blog .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.blog .box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    max-width: 300px;
+    padding: 1.5rem;
+    text-align: left;  /* Align content to the left */
+    transition: transform 0.3s ease;
+}
+
+.blog .box:hover {
+    transform: translateY(-10px);
+}
+
+.blog .box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+/* Add separators between content sections */
+.blog .box .content,
+.blog .box h3,
+.blog .box p,
+.blog .box .btn {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog .box .content {
+    display: flex;
+    justify-content: space-between;  /* Align items to left and right */
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog .box .content a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+.blog .box .content a:first-child {
+    margin-right: auto;  /* Pushes the date to the right */
+}
+
+.blog .box .content a i {
+    margin-right: 0.5rem;  /* Add space between icons and text */
+}
+
+.blog .box h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin: 0;
+}
+
+.blog .box p {
+    font-size: 1.4rem;
+    color: var(--light-color);
+    margin: 0;
+}
+
+.blog .box .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 1.5rem;
+    background-color: var(--green);
+    color: #fff;
+    border-radius: .5rem;
+    text-decoration: none;
+    border-bottom: none;  /* Remove border-bottom for the last element */
+}
+
+.blog .box .btn:hover {
+    background-color: darkgreen;
+}
+
+/* Remove border-bottom for the last element in the box */
+.blog .box .btn:last-child {
+    border-bottom: none;
+}
+
+.footer
+{
+    background: #fff;
+}
+
+.footer .box-container
+{
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(26rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3
+{
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i
+{
+    color: var(--green);
+}
+
+.footer .box-container .box .links
+{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .links i
+{
+    color: var(--green);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i
+{
+    padding-right: 2rem;
+}
+
+.footer .box-container .box p
+{
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .share a
+{
+    border:0px solid;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: var(--black);
+    margin-left: .2rem;
+    background: #eee;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover
+{
+    background: var(--green);
+    color: #fff;
+}
+
+.footer .box-container .box .email
+{
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.footer .box-container .box .payment
+{
+    height:6rem;
+}
+
+.footer .credit
+{
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    border-top: 1px solid;
+}
+
+.footer .credit span
+{
+    color: var(--green);
+}
+
+
+@media (max-width: 768px) {
+    /* Show menu button on smaller screens */
+    #menu-btn {
+        display: block;
+    } 
+
+    .navbar {
+        display: none; /* Hide the navbar by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        box-shadow: var(--box-shadow);
+        padding: 1rem 0;
+    }
+
+    .navbar.active {
+        display: flex; /* Show the navbar when active */
+    }
+
+    .header .icons {
+        margin-top: 1rem;
+    }
+
+    .product-slider .wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+    
+    .categories .box-container {
+        flex-direction: column;
+        align-items: center; /* Center-align items on smaller screens */
+    }
+}
+
+
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 1024px) {
+    /* Tablet adjustments */
+    .header {
+        padding: 1rem 3%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+    section{
+        padding: 1 rem 3%;
+    }
+}
+
+/* Align menu and icons for smaller screens */
+@media (max-width: 768px) {
+    /* Stack header items for mobile */
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 5%;
+    }
+
+    #menu-btn {
+        display: block;
+        font-size: 2rem;
+        color: var(--black);
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+
+    /* Align icons next to menu button */
+    .header .icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Ensure dropdowns and forms align properly */
+    .search-Form,
+    .login-Form,
+    .cart-dropdown {
+        width: 90%;
+        margin: 1rem auto; /* Centered alignment */
+        right: 0;
+        left: 0;
+    }
+    .header .search-form
+    {
+        width: 90%;
+        }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .header .logo {
+        font-size: 1.8rem;
+    }
+
+    #menu-btn {
+        font-size: 1.8rem;
+    }
+
+    /* Slightly smaller icon size */
+    .header .icons div {
+        font-size: 1.6rem;
+        height: 3.8rem;
+        width: 3.8rem;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .product-slider .wrapper {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+
+    .footer{
+        text-align: center;
+    }
+}
